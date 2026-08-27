@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Dermatologia clínica em Juazeiro do Norte com Dr. Evandro Santos. Consultas para todas as idades no Cariri Medical Center." />
+    <meta name="theme-color" content="#ffffff" />
+    <title>Clínica da Pele | Dr. Evandro Santos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=17" />
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+    <header class="site-header" data-header>
+      <div class="header-inner">
+        <a class="brand" href="#inicio" aria-label="Clínica da Pele — início">
+          <span class="brand-clinica">Clínica</span>
+          <span class="brand-da">da</span>
+          <span class="brand-pele">Pele<span aria-hidden="true">✓</span></span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
+          <i class="ph ph-list" aria-hidden="true"></i>
+          <span class="sr-only">Abrir menu</span>
+        </button>
+
+        <nav class="site-nav" id="menu-principal" aria-label="Navegação principal">
+          <a href="#inicio">A Clínica</a>
+          <a href="#tratamentos">Tratamentos</a>
+          <a href="#quando-procurar">Quando procurar</a>
+          <a href="#experiencia">Dr. Evandro</a>
+          <a href="#localizacao">Localização</a>
+          <a href="#duvidas">Perguntas</a>
+        </nav>
+
+        <a class="button button-small header-cta" href="https://wa.me/5588996277694?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Evandro." target="_blank" rel="noopener noreferrer">
+          Agendar consulta
+          <i class="ph ph-whatsapp-logo" aria-hidden="true"></i>
+        </a>
+      </div>
+    </header>
+
+    <main id="conteudo">
+      <section class="hero" id="inicio" aria-labelledby="hero-title">
+        <div class="hero-inner">
+          <div class="hero-copy" data-reveal>
+            <h1 id="hero-title">Cuidar da pele<br />começa por uma<br /><em>boa avaliação.</em></h1>
+            <p>Diagnóstico preciso, tratamento individualizado e acompanhamento com um dermatologista de confiança.</p>
+            <a class="button hero-button" href="https://wa.me/5588996277694?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Evandro." target="_blank" rel="noopener noreferrer">
+              Agendar consulta
+              <i class="ph ph-whatsapp-logo" aria-hidden="true"></i>
+            </a>
+            <div class="hero-meta" aria-label="Informações profissionais">
+              <span>CRM-CE 9160</span>
+              <span>RQE 1655</span>
+              <span>Atendimento para todas as idades</span>
+            </div>
+          </div>
+
+          <div class="hero-portrait" data-reveal>
+            <img src="assets/dr-evandro-hero-v2-transparent.png" alt="Dr. Evandro Santos, médico dermatologista" width="1122" height="1402" fetchpriority="high" />
+          </div>
+        </div>
+      </section>
+
+      <section class="treatments" id="tratamentos" aria-labelledby="treatments-title">
+        <div class="treatment-heading" data-reveal>
+          <p class="eyebrow">Tratamentos</p>
+          <h2 id="treatments-title">Cada cuidado<br />começa por entender.</h2>
+        </div>
+
+        <div class="treatment-carousel" data-treatment-carousel data-reveal aria-roledescription="carrossel" aria-label="Áreas de cuidado dermatológico">
+          <div class="treatment-stage">
+            <figure class="treatment-primary-media">
+              <img data-treatment-image src="assets/procedimento-diagnostico.webp" alt="Avaliação dermatológica cuidadosa da pele" loading="lazy" />
+              <button class="carousel-arrow carousel-arrow-prev" type="button" data-treatment-prev aria-label="Ver cuidado anterior">
+                <i class="ph ph-arrow-left" aria-hidden="true"></i>
+              </button>
+              <button class="carousel-arrow carousel-arrow-next-mobile" type="button" data-treatment-next aria-label="Ver próximo cuidado">
+                <i class="ph ph-arrow-right" aria-hidden="true"></i>
+              </button>
+            </figure>
+
+            <article class="treatment-content" aria-live="polite" aria-atomic="true">
+              <span class="treatment-number" data-treatment-number>01</span>
+              <h3 data-treatment-title>Diagnóstico</h3>
+              <p class="treatment-description" data-treatment-description>Entender a origem de cada alteração é o primeiro passo para um tratamento seguro e eficaz.</p>
+              <ul class="procedure-list" data-treatment-procedures>
+                <li>Patch Test</li>
+                <li>Biópsia de pele</li>
+              </ul>
+            </article>
+
+            <figure class="treatment-preview-media">
+              <img data-treatment-preview src="assets/procedimento-tratamento.webp" alt="" loading="lazy" />
+              <button class="carousel-arrow carousel-arrow-next" type="button" data-treatment-next aria-label="Ver próximo cuidado">
+                <i class="ph ph-arrow-right" aria-hidden="true"></i>
+              </button>
+            </figure>
+          </div>
+
+          <div class="treatment-controls">
+            <div class="treatment-progress" aria-hidden="true">
+              <span data-treatment-current>01</span>
+              <span class="progress-total">/ 03</span>
+              <span class="progress-rail"><i data-treatment-progress></i></span>
+            </div>
+
+            <div class="treatment-index" role="tablist" aria-label="Escolha uma área de cuidado">
+              <button class="is-active" type="button" role="tab" aria-selected="true" data-treatment-index="0"><small>01</small><span>Diagnóstico</span></button>
+              <button type="button" role="tab" aria-selected="false" data-treatment-index="1"><small>02</small><span>Procedimentos<br />terapêuticos</span></button>
+              <button type="button" role="tab" aria-selected="false" data-treatment-index="2"><small>03</small><span>Saúde<br />das unhas</span></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="signals" id="quando-procurar" aria-labelledby="signals-title">
+        <div class="signals-heading" data-reveal>
+          <p class="eyebrow">Quando procurar um dermatologista</p>
+          <h2 id="signals-title">A pele dá sinais.<br />Vale a pena observar.</h2>
+        </div>
+
+        <div class="signal-list">
+          <article class="signal-row" data-reveal>
+            <figure><img src="assets/sinal-pele.webp" alt="Pele com pintas naturais sob observação" loading="lazy" /></figure>
+            <div><span>01</span><h3>Uma pinta mudou?</h3><p>Alterações de cor, formato, tamanho ou sensibilidade merecem avaliação médica.</p></div>
+          </article>
+          <article class="signal-row reverse" data-reveal>
+            <figure><img src="assets/sinal-cabelo.webp" alt="Avaliação dermatológica do couro cabeludo" loading="lazy" /></figure>
+            <div><span>02</span><h3>O cabelo está caindo mais?</h3><p>Queda persistente, falhas ou mudanças no couro cabeludo podem ter diferentes causas.</p></div>
+          </article>
+          <article class="signal-row" data-reveal>
+            <figure><img src="assets/sinal-unha.webp" alt="Avaliação médica de unha" loading="lazy" /></figure>
+            <div><span>03</span><h3>A unha dói ou inflamou?</h3><p>Unhas encravadas e alterações recorrentes podem precisar de cuidado específico.</p></div>
+          </article>
+          <article class="signal-row reverse routine" data-reveal>
+            <figure><img src="assets/sinal-pele.webp" alt="Textura natural da pele em detalhe" loading="lazy" /></figure>
+            <div><span>04</span><h3>É hora de revisar a pele?</h3><p>A consulta também pode ser preventiva, mesmo quando não existe uma queixa urgente.</p></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="experience" id="experiencia" aria-labelledby="experience-title">
+        <div class="experience-years" data-reveal>
+          <strong>20<sup>+</sup></strong>
+          <h2>Anos de experiência<br />em Dermatologia</h2>
+          <p>Cuidado técnico, atualização constante e compromisso com cada paciente.</p>
+        </div>
+        <div class="experience-profile" data-reveal>
+          <h2 id="experience-title">Dr. Evandro Santos</h2>
+          <p class="registration">CRM-CE 9160 <span></span> RQE 1655</p>
+          <ul>
+            <li>Médico Dermatologista</li>
+            <li>Membro titular da Sociedade Brasileira de Dermatologia e da Associação Médica Brasileira</li>
+            <li>Professor na Faculdade de Medicina de Juazeiro do Norte</li>
+            <li>Referência em doenças da pele no Ceará</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="location" id="localizacao" aria-labelledby="location-title">
+        <div class="location-backdrop" aria-hidden="true"></div>
+        <div class="location-inner">
+          <div class="location-copy" data-reveal>
+            <p class="section-label">Localização</p>
+            <h2 id="location-title">Atendimento no<br />Cariri Medical Center</h2>
+            <address><i class="ph ph-map-pin" aria-hidden="true"></i><span>Av. Eduardo Mclain, 440, Romeirão,<br />Juazeiro do Norte — CE</span></address>
+            <a class="outline-link" href="https://www.google.com/maps/search/?api=1&query=Cariri+Medical+Center+Av.+Eduardo+Mclain+440+Juazeiro+do+Norte" target="_blank" rel="noopener noreferrer">Ver no mapa <i class="ph ph-arrow-square-out" aria-hidden="true"></i></a>
+          </div>
+          <div class="map-frame" data-reveal>
+            <iframe title="Mapa do Cariri Medical Center" src="https://www.google.com/maps?q=Cariri%20Medical%20Center%20Av.%20Eduardo%20Mclain%20440%20Juazeiro%20do%20Norte&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </section>
+
+      <section class="reviews" id="avaliacoes" aria-labelledby="reviews-title">
+        <div class="reviews-heading" data-reveal>
+          <p class="eyebrow">Experiências de pacientes</p>
+          <h2 id="reviews-title">Cuidado que também<br />se percebe no atendimento.</h2>
+          <p>Trechos de opiniões públicas sobre o Dr. Evandro e a Clínica da Pele.</p>
+          <div class="reviews-sources">
+            <a href="https://www.google.com/search?q=clinica+da+pele+juazeiro+do+norte" target="_blank" rel="noopener noreferrer"><i class="ph ph-google-logo" aria-hidden="true"></i> 2 avaliações no Google</a>
+            <a href="https://www.doctoralia.com.br/clinicas/clinica-da-pele-8" target="_blank" rel="noopener noreferrer"><i class="ph ph-seal-check" aria-hidden="true"></i> 6 opiniões verificadas no Doctoralia</a>
+          </div>
+        </div>
+
+        <div class="reviews-marquee" data-reveal aria-label="Avaliações verificadas de pacientes">
+          <div class="reviews-track">
+            <div class="reviews-group">
+              <article class="review-card">
+                <div class="review-author"><span class="review-avatar" aria-hidden="true">MR</span><div><h3>Maria Rosângela</h3><p>Doctoralia · opinião verificada</p></div></div>
+                <q>Um ótimo dermatologista, atencioso e prestativo.</q>
+              </article>
+              <article class="review-card">
+                <div class="review-author"><span class="review-avatar" aria-hidden="true">N</span><div><h3>Natália</h3><p>Doctoralia · opinião verificada</p></div></div>
+                <q>Excelente profissional, humano, capacitado e experiente.</q>
+              </article>
+              <article class="review-card">
+                <div class="review-author"><span class="review-avatar" aria-hidden="true">PV</span><div><h3>Paciente verificado</h3><p>Doctoralia · consulta</p></div></div>
+                <q>Competente, atualizado, comunicativo e empático.</q>
+              </article>
+              <article class="review-card">
+                <div class="review-author"><span class="review-avatar" aria-hidden="true">P</span><div><h3>Paciente</h3><p>Doctoralia · procedimento</p></div></div>
+                <q>Médico muito bom e atencioso.</q>
+              </article>
+            </div>
+            <div class="reviews-group" aria-hidden="true">
+              <article class="review-card">
+                <div class="review-author"><span class="review-avatar">MR</span><div><h3>Maria Rosângela</h3><p>Doctoralia · opinião verificada</p></div></div>
+                <q>Um ótimo dermatologista, atencioso e prestativo.</q>
+              </article>
+              <article class="review-card">
+                <div class="review-author"><span class="review-avatar">N</span><div><h3>Natália</h3><p>Doctoralia · opinião verificada</p></div></div>
+                <q>Excelente profissional, humano, capacitado e experiente.</q>
+              </article>
+              <article class="review-card">
+                <div class="review-author"><span class="review-avatar">PV</span><div><h3>Paciente verificado</h3><p>Doctoralia · consulta</p></div></div>
+                <q>Competente, atualizado, comunicativo e empático.</q>
+              </article>
+              <article class="review-card">
+                <div class="review-author"><span class="review-avatar">P</span><div><h3>Paciente</h3><p>Doctoralia · procedimento</p></div></div>
+                <q>Médico muito bom e atencioso.</q>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="reviews-marquee reviews-marquee-reverse" data-reveal aria-label="Mais avaliações verificadas de pacientes">
+          <div class="reviews-track">
+            <div class="reviews-group">
+              <article class="review-card">
+                <div class="review-author"><span class="review-avatar" aria-hidden="true">P</span><div><h3>Paciente</h3><p>Doctoralia · procedimento</p></div></div>
+                <q>Médico muito bom e atencioso.</q>
+              </article>
+              <article class="review-card">
+                <div class="review-author"><span class="review-avatar" aria-hidden="true">PV</span><div><h3>Paciente verificado</h3><p>Doctoralia · consulta</p></div></div>
+                <q>Competente, atualizado, comunicativo e empático.</q>
+              </article>
+              <article class="review-card">
+                <div class="review-author"><span class="review-avatar" aria-hidden="true">N</span><div><h3>Natália</h3><p>Doctoralia · opinião verificada</p></div></div>
+                <q>Excelente profissional, humano, capacitado e experiente.</q>
+              </article>
+              <article class="review-card">
+                <div class="review-author"><span class="review-avatar" aria-hidden="true">MR</span><div><h3>Maria Rosângela</h3><p>Doctoralia · opinião verificada</p></div></div>
+                <q>Um ótimo dermatologista, atencioso e prestativo.</q>
+              </article>
+            </div>
+            <div class="reviews-group" aria-hidden="true">
+              <article class="review-card">
+                <div class="review-author"><span class="review-avatar">P</span><div><h3>Paciente</h3><p>Doctoralia · procedimento</p></div></div>
+                <q>Médico muito bom e atencioso.</q>
+              </article>
+              <article class="review-card">
+                <div class="review-author"><span class="review-avatar">PV</span><div><h3>Paciente verificado</h3><p>Doctoralia · consulta</p></div></div>
+                <q>Competente, atualizado, comunicativo e empático.</q>
+              </article>
+              <article class="review-card">
+                <div class="review-author"><span class="review-avatar">N</span><div><h3>Natália</h3><p>Doctoralia · opinião verificada</p></div></div>
+                <q>Excelente profissional, humano, capacitado e experiente.</q>
+              </article>
+              <article class="review-card">
+                <div class="review-author"><span class="review-avatar">MR</span><div><h3>Maria Rosângela</h3><p>Doctoralia · opinião verificada</p></div></div>
+                <q>Um ótimo dermatologista, atencioso e prestativo.</q>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq" id="duvidas" aria-labelledby="faq-title">
+        <div class="faq-heading" data-reveal>
+          <h2 id="faq-title">Dúvidas<br />frequentes</h2>
+          <span aria-hidden="true"></span>
+        </div>
+        <div class="accordion" data-accordion>
+          <article class="faq-item" data-reveal>
+            <button type="button" aria-expanded="false"><span>Quais doenças de pele o Dr. Evandro trata?</span><i class="ph ph-plus" aria-hidden="true"></i></button>
+            <div class="faq-answer"><p>O atendimento é em dermatologia geral, com avaliação de doenças da pele, cabelo e unhas para todas as idades.</p></div>
+          </article>
+          <article class="faq-item" data-reveal>
+            <button type="button" aria-expanded="false"><span>Os procedimentos são dolorosos?</span><i class="ph ph-plus" aria-hidden="true"></i></button>
+            <div class="faq-answer"><p>A experiência varia conforme o procedimento. O Dr. Evandro explica a indicação e os cuidados antes de qualquer conduta.</p></div>
+          </article>
+          <article class="faq-item" data-reveal>
+            <button type="button" aria-expanded="false"><span>A consulta dermatológica é rápida?</span><i class="ph ph-plus" aria-hidden="true"></i></button>
+            <div class="faq-answer"><p>O tempo depende da necessidade de cada paciente e da avaliação realizada durante a consulta.</p></div>
+          </article>
+          <article class="faq-item" data-reveal>
+            <button type="button" aria-expanded="false"><span>Crianças e idosos podem ser atendidos?</span><i class="ph ph-plus" aria-hidden="true"></i></button>
+            <div class="faq-answer"><p>Sim. A clínica atende pacientes de todas as idades.</p></div>
+          </article>
+          <article class="faq-item" data-reveal>
+            <button type="button" aria-expanded="false"><span>Preciso de encaminhamento para consultas ou exames?</span><i class="ph ph-plus" aria-hidden="true"></i></button>
+            <div class="faq-answer"><p>Confirme essa orientação e as regras do seu convênio diretamente com a equipe pelo WhatsApp.</p></div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-top">
+        <div class="footer-message">
+          <h2>Sua pele merece<br />cuidado especializado.<br /><em>Agende sua consulta.</em></h2>
+        </div>
+        <div class="footer-contact">
+          <div class="phone-line"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i><a href="tel:+5588996277694">(88) 99627-7694</a></div>
+          <a class="button" href="https://wa.me/5588996277694?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Evandro." target="_blank" rel="noopener noreferrer"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i>Falar no WhatsApp</a>
+          <p>Atendimento no Cariri Medical Center<br /><span>Av. Eduardo Mclain, 440, Romeirão, Juazeiro do Norte — CE</span></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>Clínica da Pele © <span data-year></span> • Todos os direitos reservados.</span>
+        <span>Responsável técnico: Dr. Evandro Santos • CRM-CE 9160 <b></b> RQE 1655</span>
+      </div>
+    </footer>
+
+    <a class="floating-whatsapp" href="https://wa.me/5588996277694?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Evandro." target="_blank" rel="noopener noreferrer" aria-label="Agendar consulta pelo WhatsApp"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i></a>
+
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.2"></script>
+    <script src="script.js?v=6"></script>
+  </body>
+</html>
