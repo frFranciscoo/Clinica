@@ -66,6 +66,7 @@ document.querySelectorAll(".review-card").forEach((card) => {
 
 const revealItems = document.querySelectorAll("[data-reveal]");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const canUseGsap = !reduceMotion && Boolean(window.gsap && window.ScrollTrigger);
 
 document.querySelectorAll("main > section").forEach((section) => {
   section.querySelectorAll("[data-reveal]").forEach((item, index) => {
@@ -190,7 +191,96 @@ if (treatmentCarousel) {
   renderTreatment();
 }
 
-if (reduceMotion || !("IntersectionObserver" in window)) {
+if (canUseGsap) {
+  document.documentElement.classList.add("gsap-ready");
+  window.gsap.registerPlugin(window.ScrollTrigger);
+
+  const heroTimeline = window.gsap.timeline({ defaults: { ease: "power3.out" } });
+  heroTimeline
+    .from(".site-header", { y: -24, autoAlpha: 0, duration: 0.7 })
+    .from(".hero-ambience", { autoAlpha: 0, scale: 1.08, duration: 1.1 }, 0.08)
+    .from(".hero-field", { autoAlpha: 0, scaleX: 0.78, duration: 1.25 }, 0.12)
+    .from(".hero-line > span", { yPercent: 112, duration: 0.82, stagger: 0.1 }, 0.2)
+    .from("[data-hero-copy]", { y: 22, autoAlpha: 0, duration: 0.62, stagger: 0.1 }, 0.48)
+    .from(".hero-portrait img", { x: 70, autoAlpha: 0, scale: 0.94, duration: 1.15 }, 0.25);
+
+  window.gsap.to(".hero-portrait img", {
+    yPercent: 5,
+    ease: "none",
+    scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: 1.2 },
+  });
+
+  window.gsap.to(".hero-ambience img", {
+    yPercent: 8,
+    ease: "none",
+    scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: 1.4 },
+  });
+
+  revealItems.forEach((item) => {
+    window.gsap.from(item, {
+      y: 42,
+      autoAlpha: 0,
+      duration: 0.9,
+      ease: "power3.out",
+      scrollTrigger: { trigger: item, start: "top 87%", once: true },
+    });
+  });
+
+  const mediaFrames = document.querySelectorAll(
+    ".treatment-stage, .signal-row figure, .map-frame, .location-backdrop",
+  );
+
+  mediaFrames.forEach((frame) => {
+    frame.classList.add("motion-media");
+    window.gsap.from(frame, {
+      clipPath: "inset(0 0 100% 0)",
+      duration: 1.05,
+      ease: "power3.inOut",
+      scrollTrigger: { trigger: frame, start: "top 88%", once: true },
+    });
+  });
+
+  document.querySelectorAll(".signal-row img, .location-backdrop").forEach((media) => {
+    window.gsap.fromTo(
+      media,
+      { scale: 1.05, yPercent: -2 },
+      {
+        scale: 1,
+        yPercent: 2,
+        ease: "none",
+        scrollTrigger: { trigger: media.closest("section, article"), start: "top bottom", end: "bottom top", scrub: 1.35 },
+      },
+    );
+  });
+
+  window.gsap.from(".experience-years strong", {
+    scale: 0.82,
+    autoAlpha: 0,
+    duration: 1,
+    ease: "back.out(1.4)",
+    scrollTrigger: { trigger: ".experience", start: "top 78%", once: true },
+  });
+
+  window.gsap.from(".review-card", {
+    y: 28,
+    autoAlpha: 0,
+    duration: 0.7,
+    stagger: 0.035,
+    ease: "power2.out",
+    scrollTrigger: { trigger: ".reviews", start: "top 76%", once: true },
+  });
+
+  window.gsap.from(".footer-top > *", {
+    y: 36,
+    autoAlpha: 0,
+    duration: 0.85,
+    stagger: 0.12,
+    ease: "power3.out",
+    scrollTrigger: { trigger: ".site-footer", start: "top 88%", once: true },
+  });
+
+  window.addEventListener("load", () => window.ScrollTrigger.refresh(), { once: true });
+} else if (reduceMotion || !("IntersectionObserver" in window)) {
   revealItems.forEach((item) => item.classList.add("is-visible"));
 } else {
   const revealObserver = new IntersectionObserver(

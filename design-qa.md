@@ -1,66 +1,67 @@
-# Design QA — Hero opção 1 e tipografia global
+# Design QA — Hero aprovado e motion system
 
 ## Evidências
 
-- Verdade visual: `design-reference/hero-opcao-1-aprovada.png`
-- Implementação final: `design-qa/hero-option1-implementation-final.png`
-- Comparação conjunta: `design-qa/hero-option1-comparison-final.jpg`
-- Hero mobile: `design-qa/hero-option1-mobile-final.png`
+- Verdade visual: `design-reference/hero-opcao-2-close-aprovada.png`
+- Implementação final: `design-qa/hero-approved-motion-desktop-final.png`
+- Comparação conjunta: `design-qa/hero-comparison-final.jpg`
+- Hero mobile: `design-qa/hero-approved-motion-mobile.png`
+- Carrossel desktop no segundo bloco: `design-qa/treatment-slide-2-motion-desktop.png`
+- Carrossel mobile antes da correção: `design-qa/treatment-slide-2-motion-mobile.png`
+- Carrossel mobile depois da correção: `design-qa/treatment-slide-2-motion-mobile-fixed.png`
+- Espaçamento final da seção de sinais: `design-qa/signals-spacing-final.png`
 - Fonte: 1586 × 992 pixels.
-- Implementação: viewport de 1280 × 720 CSS pixels, densidade 1×.
-- Normalização: a referência foi reduzida proporcionalmente para 1151 × 720 e colocada ao lado da captura nativa de 1280 × 720. A diferença de proporção original foi preservada e considerada na avaliação.
-- Estado: página inicial, sem hover, elementos do hero já revelados.
+- Implementação: viewport de 1440 × 900 CSS pixels, densidade 1×; captura útil de 1425 × 891 pixels por causa da barra nativa do navegador.
+- Normalização: a referência foi ajustada para 1425 × 891 pixels antes da comparação conjunta, preservando o mesmo enquadramento horizontal.
+- Estado: hero após a animação de entrada; carrossel no segundo bloco após a transição.
 
 ## Findings
 
 - Nenhuma diferença P0, P1 ou P2 permaneceu na comparação final.
-- A estrutura aprovada foi preservada: 55,6% de superfície marfim e 44,4% de superfície coral, mensagem à esquerda e retrato em escala ampla à direita.
-- O retrato da implementação usa o recorte real aprovado do Dr. Evandro. A referência gerada alterava levemente a largura aparente do corpo; manter a identidade fotográfica real foi tratado como uma diferença aceitável de fidelidade.
+- O hero preserva a composição aprovada: ambiente clínico suave à esquerda, arco blush, campo coral, mensagem editorial e retrato aproximado do Dr. Evandro sem moldura.
+- O retrato usa a fotografia real aprovada. Pequenas diferenças residuais na suavidade do arco foram classificadas como P3 porque não alteram a hierarquia, o recorte nem a identidade visual.
 
 ## Superfícies de fidelidade
 
-- **Fontes e tipografia:** Lora foi carregada para títulos, números e citações; Manrope foi carregada para navegação, corpo, botões, credenciais e textos funcionais. Ambas foram confirmadas por `document.fonts.check`. Hierarquia, quebras e contraste foram inspecionados no desktop e no mobile.
-- **Espaçamento e ritmo:** cabeçalho, divisão do hero, recuo editorial do texto, regra vertical, CTA e credenciais seguem a hierarquia da referência. O conteúdo permanece dentro do viewport sem rolagem horizontal.
-- **Cores e tokens:** marfim, coral, carvão e amarelo de apoio continuam derivados dos tokens existentes da clínica. Não foram introduzidos gradientes ou superfícies alheias à referência.
-- **Imagem:** o PNG RGBA real de 1122 × 1402 carregou sem erro, sem halo e com recorte natural sobre a superfície coral.
-- **Copy:** título, texto de apoio, CRM, RQE, faixa etária e chamada para agendamento correspondem ao conteúdo aprovado.
+- **Fontes e tipografia:** Lora permanece nos títulos e Manrope nos textos funcionais, mantendo as quebras, os pesos e a hierarquia já aprovados. Não há truncamento no hero nem no carrossel.
+- **Espaçamento e ritmo:** cabeçalho, título, texto, CTA, credenciais e retrato seguem as proporções do mock. Não há rolagem horizontal em 1440 × 900 ou 390 × 844.
+- **Cores e tokens:** marfim, coral, blush, carvão e amarelo de apoio continuam derivados da paleta da clínica.
+- **Imagem:** o PNG real e transparente do Dr. Evandro foi mantido sem borda, halo ou distorção. O enquadramento termina próximo da cintura, como no visual aprovado.
+- **Copy:** título, subtítulo, CTA, CRM, RQE e informação de faixa etária permanecem exatamente como definidos.
+- **Movimento:** o hero entra em camadas; imagens usam máscara e escala; os blocos revelam com atraso curto; o retrato e as imagens ganham parallax discreto; depoimentos e footer entram em sequência. `prefers-reduced-motion` desativa o movimento decorativo.
 
 ## Histórico de comparação
 
 ### Passagem 1 — bloqueada
 
-- **P1:** hero curto demais, permitindo que a seção seguinte aparecesse no primeiro viewport.
-- **P1:** retrato pequeno em relação ao campo coral.
-- **P2:** cabeçalho, CTA e margens laterais não acompanhavam a escala da referência.
-- Correções: hero passou a ocupar 100dvh; retrato foi ampliado com origem na base; cabeçalho e CTA foram recalibrados; coluna de texto recebeu recuo proporcional.
+- **P2 responsivo:** no mobile, as setas do carrossel ficavam posicionadas sobre o texto quando o segundo bloco era exibido.
+- Correção: as duas setas foram ancoradas na área fotográfica, com dimensões idênticas e posição fixa para todos os slides.
+- Evidência pós-correção: `design-qa/treatment-slide-2-motion-mobile-fixed.png`.
 
-### Passagem 2 — bloqueada
+### Passagem 2 — aprovada
 
-- **P2:** título e pilha de conteúdo tinham densidade vertical maior que a referência.
-- Correções: escala, entrelinha e distâncias entre texto, botão e credenciais foram compactadas e comparadas novamente.
-
-### Passagem 3 — aprovada
-
-- A comparação conjunta não apresentou diferenças P0, P1 ou P2 acionáveis.
-- A diferença residual no corpo do retrato é consequência de preservar a fotografia real em vez da anatomia levemente reinterpretada no mock gerado.
+- O hero final foi comparado lado a lado com o mock aprovado em `design-qa/hero-comparison-final.jpg`.
+- Não restaram diferenças P0, P1 ou P2 acionáveis.
 
 ## Validação funcional e responsiva
 
 - Página respondeu com HTTP 200.
-- `script.js` passou em `node --check`.
-- Todas as oito imagens da página carregaram com `naturalWidth` válido.
+- `script.js` passou em `node --check` e `git diff --check` não encontrou erro de whitespace.
+- A biblioteca de movimento está servida localmente para não depender de CDN durante a navegação.
+- As animações foram confirmadas por estilos de entrada e saída aplicados antes e depois do scroll.
+- Menu mobile abriu e navegou para Tratamentos.
+- O segundo bloco do carrossel exibiu todo o texto e manteve altura de 490 px no desktop e 710 px no mobile.
 - FAQ abriu e atualizou `aria-expanded` para `true`.
-- Menu mobile abriu, recebeu a classe `is-open` e fechou novamente.
-- Avaliações renderizaram duas faixas: `normal` na superior e `reverse` na inferior.
-- Desktop validado em 1280 × 720; mobile validado em 390 × 844.
-- Nenhuma largura excedente foi detectada nos dois contextos.
+- Console do navegador sem erros ou avisos.
+- A seção “A pele dá sinais” ficou com 96 px acima e 104 px abaixo no desktop, aproximando os capítulos sem eliminar a respiração visual.
 
 ## Focused region comparison
 
-Não foi necessário um recorte adicional: na comparação conjunta de 2430 × 762, tipografia, retrato, botão, credenciais, cabeçalho e divisão de superfícies permanecem legíveis para avaliação direta.
+- O hero foi comparado em composição conjunta no viewport desktop.
+- O carrossel recebeu comparação focada no segundo bloco em desktop e mobile porque ali existiam os problemas anteriores de corte e posicionamento das setas.
 
 ## Follow-up polish
 
-- **P3:** em monitores muito baixos, a barra de rolagem pode ficar visível no primeiro viewport por causa do conteúdo subsequente, sem esconder ou deslocar controles do hero.
+- **P3:** a curva blush do hero é responsiva e, por isso, pode variar alguns pixels em relação ao mock raster em proporções de tela muito diferentes.
 
 **final result: passed**

@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=17" />
+    <link rel="stylesheet" href="styles.css?v=21" />
   </head>
   <body>
     <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
@@ -45,22 +45,24 @@
 
     <main id="conteudo">
       <section class="hero" id="inicio" aria-labelledby="hero-title">
+        <div class="hero-ambience" aria-hidden="true"><img src="assets/hero-plant.png" alt="" /></div>
+        <div class="hero-field" aria-hidden="true"></div>
         <div class="hero-inner">
-          <div class="hero-copy" data-reveal>
-            <h1 id="hero-title">Cuidar da pele<br />começa por uma<br /><em>boa avaliação.</em></h1>
-            <p>Diagnóstico preciso, tratamento individualizado e acompanhamento com um dermatologista de confiança.</p>
-            <a class="button hero-button" href="https://wa.me/5588996277694?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Evandro." target="_blank" rel="noopener noreferrer">
+          <div class="hero-copy">
+            <h1 id="hero-title"><span class="hero-line"><span>Cuidar da pele</span></span><span class="hero-line"><span>começa por uma</span></span><span class="hero-line"><span><em>boa avaliação.</em></span></span></h1>
+            <p data-hero-copy>Diagnóstico preciso, tratamento individualizado e acompanhamento com um dermatologista de confiança.</p>
+            <a class="button hero-button" data-hero-copy href="https://wa.me/5588996277694?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Evandro." target="_blank" rel="noopener noreferrer">
               Agendar consulta
               <i class="ph ph-whatsapp-logo" aria-hidden="true"></i>
             </a>
-            <div class="hero-meta" aria-label="Informações profissionais">
+            <div class="hero-meta" data-hero-copy aria-label="Informações profissionais">
               <span>CRM-CE 9160</span>
               <span>RQE 1655</span>
               <span>Atendimento para todas as idades</span>
             </div>
           </div>
 
-          <div class="hero-portrait" data-reveal>
+          <div class="hero-portrait">
             <img src="assets/dr-evandro-hero-v2-transparent.png" alt="Dr. Evandro Santos, médico dermatologista" width="1122" height="1402" fetchpriority="high" />
           </div>
         </div>
@@ -321,6 +323,8 @@
     <a class="floating-whatsapp" href="https://wa.me/5588996277694?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Evandro." target="_blank" rel="noopener noreferrer" aria-label="Agendar consulta pelo WhatsApp"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i></a>
 
     <script src="https://unpkg.com/@phosphor-icons/web@2.1.2"></script>
-    <script src="script.js?v=6"></script>
+    <script src="assets/vendor/gsap.min.js"></script>
+    <script src="assets/vendor/ScrollTrigger.min.js"></script>
+    <script src="script.js?v=7"></script>
   </body>
 </html>
