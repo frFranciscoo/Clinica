@@ -199,7 +199,7 @@ if (canUseGsap) {
   heroTimeline
     .from(".site-header", { y: -24, autoAlpha: 0, duration: 0.7 })
     .from(".hero-ambience", { autoAlpha: 0, scale: 1.08, duration: 1.1 }, 0.08)
-    .from(".hero-field", { autoAlpha: 0, scaleX: 0.78, duration: 1.25 }, 0.12)
+    .from(".hero-background", { autoAlpha: 0, duration: 1.25 }, 0.12)
     .from(".hero-line > span", { yPercent: 112, duration: 0.82, stagger: 0.1 }, 0.2)
     .from("[data-hero-copy]", { y: 22, autoAlpha: 0, duration: 0.62, stagger: 0.1 }, 0.48)
     .from(".hero-portrait img", { x: 70, autoAlpha: 0, scale: 0.94, duration: 1.15 }, 0.25);
