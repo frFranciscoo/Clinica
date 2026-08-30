@@ -64,6 +64,59 @@ document.querySelectorAll(".review-card").forEach((card) => {
   card.querySelector(".review-author")?.insertAdjacentElement("afterend", stars);
 });
 
+document.querySelectorAll(".reviews-marquee").forEach((marquee) => {
+  const track = marquee.querySelector(".reviews-track");
+  const sourceGroup = track?.querySelector(".reviews-group");
+  if (!track || !sourceGroup) return;
+
+  const sourceCards = [...sourceGroup.children].map((card) => card.cloneNode(true));
+  let resizeFrame = 0;
+
+  const rebuildMarquee = () => {
+    track.classList.add("is-rebuilding");
+    track.replaceChildren(sourceGroup);
+    sourceGroup.replaceChildren(...sourceCards.map((card) => card.cloneNode(true)));
+
+    const firstCard = sourceGroup.querySelector(".review-card");
+    const targetWidth = marquee.clientWidth + (firstCard?.getBoundingClientRect().width || 280);
+    let cloneIndex = 0;
+
+    while (sourceGroup.scrollWidth < targetWidth && cloneIndex < 32) {
+      const clone = sourceCards[cloneIndex % sourceCards.length].cloneNode(true);
+      clone.setAttribute("aria-hidden", "true");
+      sourceGroup.append(clone);
+      cloneIndex += 1;
+    }
+
+    const duplicateGroup = sourceGroup.cloneNode(true);
+    duplicateGroup.setAttribute("aria-hidden", "true");
+    duplicateGroup.querySelectorAll(".review-card").forEach((card) => {
+      card.setAttribute("aria-hidden", "true");
+    });
+    track.append(duplicateGroup);
+    track.style.setProperty(
+      "--reviews-duration",
+      `${Math.max(34, sourceGroup.scrollWidth / 29).toFixed(2)}s`,
+    );
+
+    requestAnimationFrame(() => track.classList.remove("is-rebuilding"));
+  };
+
+  rebuildMarquee();
+
+  const scheduleRebuild = () => {
+    cancelAnimationFrame(resizeFrame);
+    resizeFrame = requestAnimationFrame(rebuildMarquee);
+  };
+
+  if ("ResizeObserver" in window) {
+    const observer = new ResizeObserver(scheduleRebuild);
+    observer.observe(marquee);
+  }
+
+  window.addEventListener("resize", scheduleRebuild, { passive: true });
+});
+
 const revealItems = document.querySelectorAll("[data-reveal]");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const canUseGsap = !reduceMotion && Boolean(window.gsap && window.ScrollTrigger);
@@ -198,8 +251,7 @@ if (canUseGsap) {
   const heroTimeline = window.gsap.timeline({ defaults: { ease: "power3.out" } });
   heroTimeline
     .from(".site-header", { y: -24, autoAlpha: 0, duration: 0.7 })
-    .from(".hero-ambience", { autoAlpha: 0, scale: 1.08, duration: 1.1 }, 0.08)
-    .from(".hero-background", { autoAlpha: 0, duration: 1.25 }, 0.12)
+    .from(".hero-backdrop", { autoAlpha: 0, scale: 1.025, duration: 1.25 }, 0.08)
     .from(".hero-line > span", { yPercent: 112, duration: 0.82, stagger: 0.1 }, 0.2)
     .from("[data-hero-copy]", { y: 22, autoAlpha: 0, duration: 0.62, stagger: 0.1 }, 0.48)
     .from(".hero-portrait img", { x: 70, autoAlpha: 0, scale: 0.94, duration: 1.15 }, 0.25);
@@ -210,8 +262,8 @@ if (canUseGsap) {
     scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: 1.2 },
   });
 
-  window.gsap.to(".hero-ambience img", {
-    yPercent: 8,
+  window.gsap.to(".hero-backdrop img", {
+    yPercent: 2,
     ease: "none",
     scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: 1.4 },
   });

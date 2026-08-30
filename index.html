@@ -9,14 +9,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=24" />
+    <link rel="stylesheet" href="styles.css?v=33" />
   </head>
   <body>
     <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 
     <header class="site-header" data-header>
       <div class="header-inner">
-        <a class="brand" href="#inicio" aria-label="Clínica da Pele — início">
+        <a class="brand" href="#inicio" aria-label="Clínica da Pele - início">
           <span class="brand-clinica">Clínica</span>
           <span class="brand-da">da</span>
           <span class="brand-pele">Pele<span aria-hidden="true">✓</span></span>
@@ -45,11 +45,7 @@
 
     <main id="conteudo">
       <section class="hero" id="inicio" aria-labelledby="hero-title">
-        <div class="hero-ambience" aria-hidden="true"><img src="assets/hero-plant.png" alt="" /></div>
-        <div class="hero-background" aria-hidden="true">
-          <div class="hero-field"></div>
-          <div class="hero-base-fill"></div>
-        </div>
+        <div class="hero-backdrop" aria-hidden="true"><img src="assets/hero-clinic-background-v2.png" alt="" /></div>
         <div class="hero-inner">
           <div class="hero-copy">
             <h1 id="hero-title"><span class="hero-line"><span>Cuidar da pele</span></span><span class="hero-line"><span>começa por uma</span></span><span class="hero-line"><span><em>boa avaliação.</em></span></span></h1>
@@ -66,7 +62,9 @@
           </div>
 
           <div class="hero-portrait">
-            <img src="assets/dr-evandro-hero-v2-transparent.png" alt="Dr. Evandro Santos, médico dermatologista" width="1122" height="1402" fetchpriority="high" />
+            <div class="hero-portrait-media">
+              <img src="assets/dr-evandro-hero-v4-clean.png" alt="Dr. Evandro Santos, médico dermatologista" width="1122" height="1402" fetchpriority="high" />
+            </div>
           </div>
         </div>
       </section>
@@ -173,7 +171,7 @@
           <div class="location-copy" data-reveal>
             <p class="section-label">Localização</p>
             <h2 id="location-title">Atendimento no<br />Cariri Medical Center</h2>
-            <address><i class="ph ph-map-pin" aria-hidden="true"></i><span>Av. Eduardo Mclain, 440, Romeirão,<br />Juazeiro do Norte — CE</span></address>
+            <address><i class="ph ph-map-pin" aria-hidden="true"></i><span>Av. Eduardo Mclain, 440, Romeirão,<br />Juazeiro do Norte - CE</span></address>
             <a class="outline-link" href="https://www.google.com/maps/search/?api=1&query=Cariri+Medical+Center+Av.+Eduardo+Mclain+440+Juazeiro+do+Norte" target="_blank" rel="noopener noreferrer">Ver no mapa <i class="ph ph-arrow-square-out" aria-hidden="true"></i></a>
           </div>
           <div class="map-frame" data-reveal>
@@ -314,7 +312,7 @@
         <div class="footer-contact">
           <div class="phone-line"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i><a href="tel:+5588996277694">(88) 99627-7694</a></div>
           <a class="button" href="https://wa.me/5588996277694?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Evandro." target="_blank" rel="noopener noreferrer"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i>Falar no WhatsApp</a>
-          <p>Atendimento no Cariri Medical Center<br /><span>Av. Eduardo Mclain, 440, Romeirão, Juazeiro do Norte — CE</span></p>
+          <p>Atendimento no Cariri Medical Center<br /><span>Av. Eduardo Mclain, 440, Romeirão, Juazeiro do Norte - CE</span></p>
         </div>
       </div>
       <div class="footer-bottom">
@@ -328,6 +326,6 @@
     <script src="https://unpkg.com/@phosphor-icons/web@2.1.2"></script>
     <script src="assets/vendor/gsap.min.js"></script>
     <script src="assets/vendor/ScrollTrigger.min.js"></script>
-    <script src="script.js?v=10"></script>
+    <script src="script.js?v=13"></script>
   </body>
 </html>
